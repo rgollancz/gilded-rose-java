@@ -36,4 +36,11 @@ public class ItemTest {
         item.update();
         assertEquals(item.sellIn, 3);
     }
+
+    @Test
+    public void updateReducesQuality() {
+        Item item = new Item("foo", 4, 4);
+        item.update();
+        assertEquals(item.quality, 3);
+    }
 }

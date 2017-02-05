@@ -16,6 +16,7 @@ public class Item {
 
     public void update() {
         this.sellIn --;
+        this.quality --;
     }
 
    @Override
