@@ -14,6 +14,10 @@ public class Item {
         this.quality = quality;
     }
 
+    public void update() {
+        this.sellIn --;
+    }
+
    @Override
    public String toString() {
         return this.name + ", " + this.sellIn + ", " + this.quality;
