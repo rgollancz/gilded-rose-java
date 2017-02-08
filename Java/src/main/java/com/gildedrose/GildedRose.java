@@ -11,6 +11,5 @@ class GildedRose {
         for (int i = 0; i < this.items.length; i++) {
             this.items[i].update();
         }
-
     }
 }

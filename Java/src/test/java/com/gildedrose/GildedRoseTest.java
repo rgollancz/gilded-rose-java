@@ -21,7 +21,7 @@ public class GildedRoseTest {
                 new Item("meringue", 4, 2)};
         GildedRose app = new GildedRose(items);
         app.updateItems();
-        assertEquals(app.items[0].sellIn, -1);
+        assertEquals(app.items[0].getSellIn(), -1);
     }
 
     @Test
@@ -30,7 +30,7 @@ public class GildedRoseTest {
                 new Item("meringue", 4, 2)};
         GildedRose app = new GildedRose(items);
         app.updateItems();
-        assertEquals(app.items[0].quality, 4);
+        assertEquals(app.items[0].getQuality(), 4);
     }
 
 }

@@ -15,7 +15,6 @@ public class ItemTest {
         itemZeroSellIn =  new Item("foo", 0, 4);
     }
 
-
     @Test
     public void textSummary() {
         assertEquals(itemWithSellIn.toString(), "foo, 4, 4" );
@@ -23,34 +22,34 @@ public class ItemTest {
 
     @Test
     public void getName() {
-        assertEquals(itemWithSellIn.name, "foo");
+        assertEquals(itemWithSellIn.getName(), "foo");
     }
 
     @Test
     public void getSellIn() {
-        assertEquals(itemWithSellIn.sellIn, 4);
+        assertEquals(itemWithSellIn.getSellIn(), 4);
     }
 
     @Test
     public void getQuality() {
-        assertEquals(itemWithSellIn.quality, 4);
+        assertEquals(itemWithSellIn.getQuality(), 4);
     }
 
     @Test
     public void updateReducesSellIn() {
         itemWithSellIn.update();
-        assertEquals(itemWithSellIn.sellIn, 3);
+        assertEquals(itemWithSellIn.getSellIn(), 3);
     }
 
     @Test
     public void updateReducesQualityByOne() {
         itemWithSellIn.update();
-        assertEquals(itemWithSellIn.quality, 3);
+        assertEquals(itemWithSellIn.getQuality(), 3);
     }
 
     @Test
     public void updateReducesQualityByTwo() {
         itemZeroSellIn.update();
-        assertEquals(itemZeroSellIn.quality, 2);
+        assertEquals(itemZeroSellIn.getQuality(), 2);
     }
 }
