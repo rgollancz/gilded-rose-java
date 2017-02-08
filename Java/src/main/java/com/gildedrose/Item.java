@@ -14,9 +14,15 @@ public class Item {
         this.quality = quality;
     }
 
-    public void update() {
+    public Item update() {
         this.sellIn --;
-        this.quality --;
+        updateQuality();
+        return this;
+    }
+
+    private void updateQuality() {
+        this.quality -= this.sellIn > 0 ? 1 : 2;
+        if (this.quality <0) this.quality = 0;
     }
 
    @Override

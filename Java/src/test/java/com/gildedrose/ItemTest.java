@@ -9,7 +9,7 @@ public class ItemTest {
     @Test
     public void textSummary() {
         Item item = new Item("foo", 4, 0);
-        assertEquals(item.toString(), "foo, 0, 0" );
+        assertEquals(item.toString(), "foo, 4, 0" );
     }
 
     @Test
@@ -38,9 +38,16 @@ public class ItemTest {
     }
 
     @Test
-    public void updateReducesQuality() {
+    public void updateReducesQualityByOne() {
         Item item = new Item("foo", 4, 4);
         item.update();
         assertEquals(item.quality, 3);
+    }
+
+    @Test
+    public void updateReducesQualityByTwo() {
+        Item item = new Item("foo", 0, 4);
+        item.update();
+        assertEquals(item.quality, 2);
     }
 }
