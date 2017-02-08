@@ -7,11 +7,30 @@ import org.junit.Test;
 public class GildedRoseTest {
 
     @Test
-    public void foo() {
-        Item[] items = new Item[] { new Item("foo", 0, 0) };
+    public void retainsItemsAfterUpdate() {
+        Item[] items = new Item[] { new Item("pea soup", 0, 6),
+                new Item("meringue", 4, 2)};
         GildedRose app = new GildedRose(items);
         app.updateItems();
-        assertEquals("foo", app.items[0].name);
+        assertEquals(app.items.length, 2);
+    }
+
+    @Test
+    public void updatesItemSellIn() {
+        Item[] items = new Item[] { new Item("pea soup", 0, 6),
+                new Item("meringue", 4, 2)};
+        GildedRose app = new GildedRose(items);
+        app.updateItems();
+        assertEquals(app.items[0].sellIn, -1);
+    }
+
+    @Test
+    public void updatesItemQuality() {
+        Item[] items = new Item[] { new Item("pea soup", 0, 6),
+                new Item("meringue", 4, 2)};
+        GildedRose app = new GildedRose(items);
+        app.updateItems();
+        assertEquals(app.items[0].quality, 4);
     }
 
 }
